@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-with-presync
+  namespace: test
+spec:
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  source:
+    repoURL: https://github.com/mihai-tracer/argocd-test.git
+    targetRevision: main
+    path: app-with-presync
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: test
+  valuesObject:
+    image:
+      tag: "3.2.2"
+
+    cm:
+      someValue: cm-value-v1

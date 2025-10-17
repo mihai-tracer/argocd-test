@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "app-with-presync.fullname" . }}
+  labels:
+    {{- include "app-with-presync.labels" . | nindent 4 }}
+data:
+  some-value: {{ .Values.cm.someValue | quote }}
