@@ -20,7 +20,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["sh"]
-          args: ["-c", "echo $(SOME_ENV_VAR) && sleep 10"]
+          args: ["-c", "echo $(SOME_ENV_VAR) && sleep 3"]
           env:
             - name: SOME_ENV_VAR
               value: {{ .Values.preSyncJob.someEnvVar | quote }}
