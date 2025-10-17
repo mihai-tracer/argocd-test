@@ -20,6 +20,6 @@ spec:
     helm:
       valuesObject:
         image:
-          tag: "3.22.2"
+          tag: "3.21.5"
         cm:
           someValue: cm-value-v1
