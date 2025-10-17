@@ -21,6 +21,6 @@ spec:
     helm:
       valuesObject:
         image:
-          tag: "3.22"
+          tag: "3.21"
         cm:
           someValue: cm-value-v4
