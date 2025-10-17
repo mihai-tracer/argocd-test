@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ include "app-with-presync.fullname" . }}
   labels:
-    image_tag: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+    image_tag: "{{ .Values.image.repository }}_{{ .Values.image.tag | default .Chart.AppVersion }}"
     {{- include "app-with-presync.labels" . | nindent 4 }}
 data:
   some-value: {{ .Values.cm.someValue | quote }}
