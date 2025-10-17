@@ -6,4 +6,3 @@ metadata:
     {{- include "app-with-presync.labels" . | nindent 4 }}
 data:
   some-value: {{ .Values.cm.someValue | quote }}
-  image-tag-please-ignore: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"

@@ -5,6 +5,7 @@ metadata:
   labels:
     {{- include "app-with-presync.labels" . | nindent 4 }}
   annotations:
+    argocd.argoproj.io/sync-options: Force=true,Replace=true
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
     argocd.argoproj.io/hook: "PreSync"
     argocd.argoproj.io/sync-wave: "-100"
